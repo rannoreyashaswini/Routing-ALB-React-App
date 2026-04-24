@@ -1,3 +1,10 @@
+Core Setup
+React Vite app runs on EC2 instance at port 3000.
+
+Application Load Balancer (ALB) listens on port 80 (HTTP).
+
+ALB forwards all incoming traffic on port 80 to the target group configured for port 3000.
+
 1. App Setup (Minimal)
 Launch EC2 instance (Amazon Linux/Ubuntu).
 Install Node.js.
