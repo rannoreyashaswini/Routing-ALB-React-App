@@ -34,23 +34,7 @@ Health check fails → check SG rules, app running on 3000, correct path.
 App not loading → verify listener forwards to correct target group.
 Timeouts → ensure EC2 SG allows traffic from ALB SG.
 
-Design:
-Start
-  |
-  v
-Is ALB DNS reachable?
-  |-- No --> Check ALB SG (port 80 open to internet)
-  |
-  v
-Are health checks passing?
-  |-- No --> Verify:
-              - App running on port 3000
-              - Correct health check path (/)
-              - EC2 SG allows traffic from ALB SG
-  |
-  v
-Does app load via ALB DNS?
-  |-- No --> Confirm listener forwards to target group (port 3000)
+No --> Confirm listener forwards to target group (port 3000)
               Check target group registration
   |
   v
